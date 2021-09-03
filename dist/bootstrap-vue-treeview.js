@@ -1255,7 +1255,7 @@
 	/* style */
 	var __vue_inject_styles__ = function (inject) {
 	  if (!inject) return;
-	  inject("data-v-1c447986_0", { source: "\n.drop-between-zone{height:4px;width:100%;z-index:1\n}\n.drop-between-zone.active{position:static;top:0;border:1px dashed #d2d2d2;height:24px\n}", map: undefined, media: undefined });
+	  inject("data-v-4421b31a_0", { source: "\n.drop-between-zone{height:4px;width:100%;z-index:1\n}\n.drop-between-zone.active{position:static;top:0;border:1px dashed #d2d2d2;height:24px\n}", map: undefined, media: undefined });
 	};
 	/* scoped */
 	var __vue_scope_id__ = undefined;
@@ -1648,8 +1648,17 @@
 	        },
 	        deleteChildNode: function deleteChildNode(childNodeData) {
 	            var children = this.data[this.childrenProp];
-	            var idx = children.indexOf(childNodeData);
-	            children.splice(idx, 1);
+	            var idx = -1;
+	            for (var i = 0; i < children.length; i++) {
+	                if (children[i].id === childNodeData.data.id) {
+	                    idx = i;
+	                    break;
+	                }
+	            }
+	            //let idx = children.indexOf(childNodeData)
+	            if (idx != -1) {
+	                children.splice(idx, 1);
+	            }
 	        },
 	        appendChild: function appendChild(childNodeData) {
 	            if (this.data[this.childrenProp] === undefined) {
@@ -1741,7 +1750,7 @@
 	/* style */
 	var __vue_inject_styles__$1 = function (inject) {
 	  if (!inject) return;
-	  inject("data-v-3403cd04_0", { source: "\n.tree-node-label{cursor:pointer;padding:2px 4px;border-radius:3px;-ms-user-select:none;user-select:none\n}\n.tree-node-label:hover{background-color:#ebecee\n}\n.tree-node-icon{color:#464646;transition:transform .3s\n}\n.tree-node{margin-left:16px\n}\n.tree-node.has-child-nodes{margin-left:0\n}\n.tree-node.has-child-nodes .tree-node-icon{cursor:pointer\n}\n.tree-node-expanded .tree-node-icon{transform:rotate(90deg);transition:transform .3s\n}\n.tree-node-children{margin-left:22px\n}\n.tree-branch{position:relative\n}\n.tree-branch.selected>.tree-node>.tree-node-label{background-color:#007bff;color:#fff\n}\n.tree-node.drop-active{border:1px dashed #d2d2d2\n}\n.tree-node-label .label-icon{font-size:90%\n}\n.tree-node>svg{display:inline-block;-ms-user-select:none;user-select:none\n}\n.tree-node .input-rename{display:inline-block;width:auto;font-weight:400;line-height:1;font-size:1rem;padding:2px 4px;height:auto;box-sizing:border-box\n}\n.tree-node svg>.svg-icon{fill:none;opacity:1;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\n}\n.tree-node.tree-node-expanded>svg>.svg-icon{fill:none\n}", map: undefined, media: undefined });
+	  inject("data-v-6aa5320c_0", { source: "\n.tree-node-label{cursor:pointer;padding:2px 4px;border-radius:3px;-ms-user-select:none;user-select:none\n}\n.tree-node-label:hover{background-color:#ebecee\n}\n.tree-node-icon{color:#464646;transition:transform .3s\n}\n.tree-node{margin-left:16px\n}\n.tree-node.has-child-nodes{margin-left:0\n}\n.tree-node.has-child-nodes .tree-node-icon{cursor:pointer\n}\n.tree-node-expanded .tree-node-icon{transform:rotate(90deg);transition:transform .3s\n}\n.tree-node-children{margin-left:22px\n}\n.tree-branch{position:relative\n}\n.tree-branch.selected>.tree-node>.tree-node-label{background-color:#007bff;color:#fff\n}\n.tree-node.drop-active{border:1px dashed #d2d2d2\n}\n.tree-node-label .label-icon{font-size:90%\n}\n.tree-node>svg{display:inline-block;-ms-user-select:none;user-select:none\n}\n.tree-node .input-rename{display:inline-block;width:auto;font-weight:400;line-height:1;font-size:1rem;padding:2px 4px;height:auto;box-sizing:border-box\n}\n.tree-node svg>.svg-icon{fill:none;opacity:1;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\n}\n.tree-node.tree-node-expanded>svg>.svg-icon{fill:none\n}", map: undefined, media: undefined });
 	};
 	/* scoped */
 	var __vue_scope_id__$1 = undefined;
@@ -1900,7 +1909,7 @@
 	/* style */
 	var __vue_inject_styles__$2 = function (inject) {
 	  if (!inject) return;
-	  inject("data-v-e6ea6026_0", { source: "\n.ctx-item{cursor:pointer;user-select:none\n}", map: undefined, media: undefined });
+	  inject("data-v-61ced1a5_0", { source: "\n.ctx-item{cursor:pointer;user-select:none\n}", map: undefined, media: undefined });
 	};
 	/* scoped */
 	var __vue_scope_id__$2 = undefined;
@@ -2177,7 +2186,9 @@
 	            EventBus.$emit('dropOK');
 	        },
 	        deleteNode: function deleteNode(nodeData) {
+	            console.log(nodeData);
 	            var nodes = this.data;
+	            console.log(nodes);
 	            var idx = nodes.indexOf(nodeData);
 	            nodes.splice(idx, 1);
 	        },
@@ -2222,7 +2233,7 @@
 	/* style */
 	var __vue_inject_styles__$3 = function (inject) {
 	  if (!inject) return;
-	  inject("data-v-07cd949b_0", { source: "\n.tree-view{text-align:left\n}", map: undefined, media: undefined });
+	  inject("data-v-5f228900_0", { source: "\n.tree-view{text-align:left\n}", map: undefined, media: undefined });
 	};
 	/* scoped */
 	var __vue_scope_id__$3 = undefined;

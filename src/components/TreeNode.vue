@@ -341,8 +341,17 @@
             },
             deleteChildNode(childNodeData) {
                 let children = this.data[this.childrenProp]
-                let idx = children.indexOf(childNodeData)
-                children.splice(idx, 1)
+                let idx = -1;
+                for (let i = 0; i < children.length; i++) {
+                    if(children[i].id === childNodeData.data.id){
+                        idx = i;
+                        break;
+                    }
+                }
+                //let idx = children.indexOf(childNodeData)
+                if(idx != -1){
+                    children.splice(idx, 1)    
+                }
             },
             appendChild(childNodeData) {
                 if (this.data[this.childrenProp] === undefined) {
